@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monitoring Dashboard - For Corsair Xeneon Edge</title>
-  <meta name="description" content="A powerful monitoring dashboard designed for the Corsair Xeneon Edge touchscreen. Monitor CPU, GPU, RAM, network, and more.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Touch Control Center – PC, Gaming & Smart Home</title>
+  <meta name="description" content="Turn your touchscreen into a full control center. Monitor your PC, launch apps and games, control audio, smart home and manage your day from one screen." />
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -15,7 +16,6 @@
       line-height: 1.6;
     }
 
-    /* Header */
     header {
       position: fixed;
       top: 0;
@@ -30,12 +30,7 @@
       z-index: 100;
     }
 
-    .logo {
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-    }
-
+    .logo { font-size: 20px; font-weight: 700; color: #fff; }
     .logo span { color: #6366f1; }
 
     .nav-links { display: flex; gap: 32px; align-items: center; }
@@ -43,13 +38,13 @@
       color: #94a3b8;
       text-decoration: none;
       font-size: 14px;
-      transition: color 0.2s;
     }
     .nav-links a:hover { color: #fff; }
 
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       padding: 10px 24px;
       border-radius: 8px;
@@ -57,14 +52,15 @@
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s;
-      cursor: pointer;
       border: none;
+      cursor: pointer;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #6366f1, #8b5cf6);
       color: #fff;
     }
+
     .btn-primary:hover {
       transform: translateY(-1px);
       box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
@@ -75,35 +71,29 @@
       color: #a5b4fc;
       border: 1px solid rgba(99, 102, 241, 0.25);
     }
-    .btn-secondary:hover {
-      background: rgba(99, 102, 241, 0.2);
-    }
 
-    /* Hero */
     .hero {
       padding: 160px 40px 80px;
       text-align: center;
       position: relative;
-      overflow: hidden;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 600px;
-      background: radial-gradient(ellipse, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
-      pointer-events: none;
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      background: rgba(99, 102, 241, 0.1);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      margin-bottom: 24px;
     }
 
     .hero h1 {
       font-size: 56px;
       font-weight: 800;
       line-height: 1.1;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       background: linear-gradient(135deg, #fff 30%, #a5b4fc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -112,29 +102,13 @@
     .hero p {
       font-size: 20px;
       color: #94a3b8;
-      max-width: 600px;
+      max-width: 720px;
       margin: 0 auto 40px;
     }
 
     .hero-buttons { display: flex; gap: 16px; justify-content: center; }
 
-    .badge {
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 500;
-      background: rgba(99, 102, 241, 0.1);
-      color: #a5b4fc;
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      margin-bottom: 24px;
-    }
-
-    /* Screenshot */
-    .screenshot-section {
-      padding: 0 40px 80px;
-      text-align: center;
-    }
+    .screenshot-section { padding: 0 40px 80px; text-align: center; }
 
     .screenshot-wrapper {
       max-width: 1100px;
@@ -144,28 +118,10 @@
       border: 1px solid rgba(99, 102, 241, 0.15);
       box-shadow: 0 24px 80px rgba(99, 102, 241, 0.1);
       background: #12121a;
-      padding: 32px;
-      color: #64748b;
-      font-size: 14px;
+      padding: 24px;
     }
 
-    .screenshot-placeholder {
-      aspect-ratio: 2560/720;
-      background: linear-gradient(135deg, #12121a 0%, #1a1a2e 100%);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      color: #475569;
-    }
-
-    /* Features */
-    .features {
-      padding: 80px 40px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .features { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
 
     .features h2 {
       font-size: 36px;
@@ -192,31 +148,7 @@
       border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 12px;
       padding: 32px;
-      transition: all 0.2s;
     }
-
-    .feature-card:hover {
-      border-color: rgba(99, 102, 241, 0.25);
-      background: rgba(99, 102, 241, 0.04);
-    }
-
-    .feature-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      margin-bottom: 16px;
-    }
-
-    .feature-icon.purple { background: rgba(99, 102, 241, 0.15); }
-    .feature-icon.green { background: rgba(34, 197, 94, 0.15); }
-    .feature-icon.blue { background: rgba(59, 130, 246, 0.15); }
-    .feature-icon.orange { background: rgba(249, 115, 22, 0.15); }
-    .feature-icon.red { background: rgba(239, 68, 68, 0.15); }
-    .feature-icon.cyan { background: rgba(6, 182, 212, 0.15); }
 
     .feature-card h3 {
       font-size: 18px;
@@ -228,26 +160,12 @@
     .feature-card p {
       font-size: 14px;
       color: #94a3b8;
-      line-height: 1.6;
     }
 
-    /* Designed for */
     .designed-for {
       padding: 80px 40px;
       text-align: center;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .designed-for h2 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .designed-for > p {
-      color: #94a3b8;
-      font-size: 18px;
-      margin-bottom: 40px;
     }
 
     .specs {
@@ -257,42 +175,18 @@
       flex-wrap: wrap;
     }
 
-    .spec {
-      text-align: center;
-    }
-
     .spec-value {
       font-size: 32px;
       font-weight: 700;
       color: #6366f1;
     }
 
-    .spec-label {
-      font-size: 14px;
-      color: #64748b;
-      margin-top: 4px;
-    }
+    .spec-label { font-size: 14px; color: #64748b; }
 
-    /* Pricing */
-    .pricing {
-      padding: 80px 40px;
-      text-align: center;
-    }
-
-    .pricing h2 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .pricing > p {
-      color: #94a3b8;
-      font-size: 18px;
-      margin-bottom: 48px;
-    }
+    .pricing { padding: 80px 40px; text-align: center; }
 
     .price-card {
-      max-width: 400px;
+      max-width: 420px;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(99, 102, 241, 0.2);
@@ -303,38 +197,9 @@
     .price {
       font-size: 52px;
       font-weight: 800;
-      color: #fff;
       margin-bottom: 4px;
     }
 
-    .price-period {
-      color: #64748b;
-      font-size: 15px;
-      margin-bottom: 32px;
-    }
-
-    .price-features {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 32px;
-    }
-
-    .price-features li {
-      padding: 8px 0;
-      font-size: 15px;
-      color: #cbd5e1;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .price-features li::before {
-      content: '\2713';
-      color: #22c55e;
-      font-weight: 700;
-    }
-
-    /* Footer */
     footer {
       padding: 40px;
       text-align: center;
@@ -343,130 +208,154 @@
       font-size: 14px;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .hero h1 { font-size: 36px; }
       .features-grid { grid-template-columns: 1fr; }
-      .hero-buttons { flex-direction: column; align-items: center; }
-      .nav-links { gap: 16px; }
-      .specs { gap: 24px; }
+      .hero-buttons { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">Monitoring <span>Dashboard</span></div>
-    <nav class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <!-- REMPLACER: Mettre le lien LemonSqueezy ici -->
-      <a href="#pricing" class="btn btn-primary">Buy Now</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">Touch <span>Control Center</span></div>
+  <nav class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#pricing" class="btn btn-primary">Buy Now</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div class="badge">Designed for Corsair Xeneon Edge</div>
-    <h1>Your PC at a glance.<br>Always.</h1>
-    <p>A beautiful monitoring dashboard built for the Corsair Xeneon Edge touchscreen. CPU, GPU, RAM, network, calendar, media controls, and more.</p>
-    <div class="hero-buttons">
-      <!-- REMPLACER: Mettre le lien LemonSqueezy ici -->
-      <a href="#pricing" class="btn btn-primary">Get Started</a>
-      <a href="#features" class="btn btn-secondary">Learn More</a>
+<section class="hero">
+  <div class="badge">Built for touch · Perfect for Corsair Xeneon Edge</div>
+  <h1>Your PC.<br>Your home.<br>Your control.</h1>
+  <p>
+    Turn your touchscreen into a real control center.<br>
+    Monitor your PC, launch apps and games, control audio, smart home
+    and manage your day — all from one screen.
+  </p>
+  <div class="hero-buttons">
+    <a href="#pricing" class="btn btn-primary">Get Started</a>
+    <a href="#features" class="btn btn-secondary">Learn More</a>
+  </div>
+</section>
+
+<section class="screenshot-section">
+  <div class="screenshot-wrapper">
+    <img src="monitoring.png" alt="Touch Control Center Dashboard" style="width:100%; border-radius:8px;" />
+  </div>
+  <p style="margin-top:16px; color:#94a3b8;">
+    Real-time monitoring, launcher, calendar, smart home and system controls —
+    optimized for ultra-wide touchscreens.
+  </p>
+</section>
+
+<section class="features" id="features">
+  <h2>Everything you need</h2>
+  <p>
+    Everything you need to control your PC, your games, your smart home
+    and your daily workflow — from one touch screen.
+  </p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <h3>Advanced Monitoring</h3>
+      <p>
+        Real-time CPU per-core graphs, GPU, temperatures, disks and network,
+        with gaming-optimized performance mode.
+      </p>
     </div>
-  </section>
 
-  <section class="screenshot-section">
-    <div class="screenshot-wrapper">
-      <img src="monitoring.png" alt="Monitoring Dashboard" style="width:100%; border-radius:8px;">
+    <div class="feature-card">
+      <h3>Stream Deck–Style Launcher</h3>
+      <p>
+        Launch apps, games, system actions or profiles with a single tap.
+        Fully customizable grid with export and import.
+      </p>
     </div>
-  </section>
 
-  <section class="features" id="features">
-    <h2>Everything you need</h2>
-    <p>All the tools to monitor and control your PC from your secondary screen.</p>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon purple">&#x1F4BB;</div>
-        <h3>System Monitoring</h3>
-        <p>Real-time CPU, GPU, RAM, temperature, and disk usage with per-core graphs and history.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon green">&#x1F3B5;</div>
-        <h3>Media Controls</h3>
-        <p>Built-in music streaming integration. Control playback without leaving your game.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon blue">&#x1F4C5;</div>
-        <h3>Calendar</h3>
-        <p>Google Calendar and ICS calendars synced with event visualization on a weekly view.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon orange">&#x1F680;</div>
-        <h3>App Launcher</h3>
-        <p>Customizable grid of shortcuts. Launch Steam, Ubisoft Connect, Epic Games, and any app with one tap.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon red">&#x1F4F0;</div>
-        <h3>RSS News Feed</h3>
-        <p>Stay updated with your favorite gaming, tech, and deals feeds right on your screen.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon cyan">&#x1F3E0;</div>
-        <h3>Home Assistant</h3>
-        <p>Embedded Home Assistant integration. Access your smart home dashboard directly from your screen.</p>
-      </div>
+    <div class="feature-card">
+      <h3>Smart Home Control</h3>
+      <p>
+        Native Home Assistant integration. Control lights, switches, sensors
+        and shutters with real-time feedback.
+      </p>
     </div>
-  </section>
 
-  <section class="designed-for">
-    <h2>Built for the Xeneon Edge</h2>
-    <p>Perfectly optimized for the ultra-wide touchscreen form factor.</p>
-    <div class="specs">
-      <div class="spec">
-        <div class="spec-value">2560x720</div>
-        <div class="spec-label">Resolution</div>
-      </div>
-      <div class="spec">
-        <div class="spec-value">Touch</div>
-        <div class="spec-label">Optimized UI</div>
-      </div>
-      <div class="spec">
-        <div class="spec-value">9</div>
-        <div class="spec-label">Languages</div>
-      </div>
-      <div class="spec">
-        <div class="spec-value">Low</div>
-        <div class="spec-label">Resource Usage</div>
-      </div>
+    <div class="feature-card">
+      <h3>Calendar & Productivity</h3>
+      <p>
+        Google Calendar and ICS support, notes, timers, Pomodoro
+        and daily organization tools.
+      </p>
     </div>
-  </section>
 
-  <section class="pricing" id="pricing">
-    <h2>Simple pricing</h2>
-    <p>One license, one machine. No subscription.</p>
-
-    <div class="price-card">
-      <!-- REMPLACER: Mettre ton prix -->
-      <div class="price">14.99 &euro;</div>
-      <div class="price-period">One-time payment &middot; Lifetime license</div>
-      <ul class="price-features">
-        <li>All modules included</li>
-        <li>Lifetime updates</li>
-        <li>9 languages supported</li>
-        <li>Touchscreen optimized</li>
-        <li>Low resource usage</li>
-        <li>License locked to your machine</li>
-      </ul>
-      <!-- REMPLACER: Mettre le vrai lien LemonSqueezy ici -->
-      <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 14px;">Buy Now</a>
+    <div class="feature-card">
+      <h3>Audio & Media Control</h3>
+      <p>
+        System volume, output devices, media controls
+        and real-time audio visualizer.
+      </p>
     </div>
-  </section>
 
-  <footer>
-    &copy; 2026 Monitoring Dashboard. All rights reserved.
-  </footer>
+    <div class="feature-card">
+      <h3>Gaming Friendly</h3>
+      <p>
+        Automatic gaming detection, reduced polling,
+        disabled animations and low system impact.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="designed-for">
+  <h2>Built for the Xeneon Edge</h2>
+  <p>Perfectly optimized for ultra-wide touchscreens.</p>
+
+  <div class="specs">
+    <div>
+      <div class="spec-value">2560×720</div>
+      <div class="spec-label">Resolution</div>
+    </div>
+    <div>
+      <div class="spec-value">Touch</div>
+      <div class="spec-label">Optimized UI</div>
+    </div>
+    <div>
+      <div class="spec-value">Gaming</div>
+      <div class="spec-label">Low-impact monitoring</div>
+    </div>
+    <div>
+      <div class="spec-value">9</div>
+      <div class="spec-label">Languages</div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Simple pricing</h2>
+  <p>One license. Full control. No subscription.</p>
+
+  <div class="price-card">
+    <div class="price">29.99 €</div>
+    <div style="color:#64748b; margin-bottom:32px;">One-time payment · Lifetime license</div>
+
+    <ul style="list-style:none; text-align:left; margin-bottom:32px;">
+      <li>✔ Complete PC monitoring & gaming mode</li>
+      <li>✔ Stream Deck–style launcher</li>
+      <li>✔ Home Assistant integration</li>
+      <li>✔ Calendar, media & productivity tools</li>
+      <li>✔ Fully touch-optimized interface</li>
+      <li>✔ Offline capable · No cloud dependency</li>
+    </ul>
+
+    <a href="#" class="btn btn-primary" style="width:100%;">Buy Now</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Touch Control Center — Touch Control Center for PC, Gaming & Smart Home
+</footer>
 
 </body>
 </html>
