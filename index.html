@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="n4yPFryeHwIj4SlQndNmdZZZ8nahWynk40601wL_oCQ" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PulseDeck – PC, Gaming & Smart Home</title>
-  <meta name="description" content="PulseDeck - Turn your touchscreen into a full control center. Monitor your PC, launch apps and games, control audio, smart home and manage your day from one screen." />
-  
+  <title>PulseDeck – All-in-One Dashboard for PC, Gaming, Streaming & Smart Home</title>
+  <meta name="description" content="PulseDeck - Turn any secondary screen into a full control center. Monitor your PC, control OBS Studio, launch apps and games, manage smart home, volume control and more. 25€ lifetime license." />
+  <meta name="keywords" content="PulseDeck, PC monitoring, dashboard, Corsair Xeneon Edge, ASUS ROG Mjolnir, OBS Studio, Home Assistant, StreamDeck, touchscreen, second screen, gaming" />
+  <meta name="google-site-verification" content="n4yPFryeHwIj4SlQndNmdZZZ8nahWynk40601wL_oCQ" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="PulseDeck – All-in-One Dashboard for Your Secondary Screen" />
+  <meta property="og:description" content="Turn any touchscreen into a powerful control center. PC monitoring, OBS Studio, Home Assistant, launcher and 13+ modules. 25€ lifetime." />
+  <meta property="og:image" content="monitoring.png" />
+  <meta property="og:type" content="website" />
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -39,6 +46,7 @@
       color: #94a3b8;
       text-decoration: none;
       font-size: 14px;
+      transition: color 0.2s;
     }
     .nav-links a:hover { color: #fff; }
 
@@ -73,6 +81,11 @@
       border: 1px solid rgba(99, 102, 241, 0.25);
     }
 
+    .btn-secondary:hover {
+      background: rgba(99, 102, 241, 0.2);
+    }
+
+    /* Hero */
     .hero {
       padding: 160px 40px 80px;
       text-align: center;
@@ -107,8 +120,9 @@
       margin: 0 auto 40px;
     }
 
-    .hero-buttons { display: flex; gap: 16px; justify-content: center; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+    /* Screenshot */
     .screenshot-section { padding: 0 40px 80px; text-align: center; }
 
     .screenshot-wrapper {
@@ -122,7 +136,8 @@
       padding: 24px;
     }
 
-    .features { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
+    /* Features */
+    .features { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
 
     .features h2 {
       font-size: 36px;
@@ -149,6 +164,18 @@
       border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 12px;
       padding: 32px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .feature-card:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+      display: block;
     }
 
     .feature-card h3 {
@@ -163,10 +190,43 @@
       color: #94a3b8;
     }
 
+    .feature-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .tag-new {
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+    }
+
+    .tag-popular {
+      background: rgba(251, 191, 36, 0.15);
+      color: #fbbf24;
+    }
+
+    /* Designed for */
     .designed-for {
       padding: 80px 40px;
       text-align: center;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .designed-for h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .designed-for > p {
+      color: #94a3b8;
+      margin-bottom: 40px;
+      font-size: 18px;
     }
 
     .specs {
@@ -174,6 +234,7 @@
       justify-content: center;
       gap: 48px;
       flex-wrap: wrap;
+      margin-bottom: 40px;
     }
 
     .spec-value {
@@ -184,10 +245,70 @@
 
     .spec-label { font-size: 14px; color: #64748b; }
 
+    /* Modules showcase */
+    .modules-section {
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .modules-section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .modules-section > p {
+      text-align: center;
+      color: #94a3b8;
+      margin-bottom: 48px;
+      font-size: 18px;
+    }
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .module-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      font-size: 14px;
+      color: #cbd5e1;
+      transition: border-color 0.2s;
+    }
+
+    .module-pill:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .module-pill .icon { font-size: 20px; }
+
+    /* Pricing */
     .pricing { padding: 80px 40px; text-align: center; }
 
+    .pricing h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .pricing > p {
+      color: #94a3b8;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
     .price-card {
-      max-width: 420px;
+      max-width: 480px;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(99, 102, 241, 0.2);
@@ -201,6 +322,26 @@
       margin-bottom: 4px;
     }
 
+    .price-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 32px;
+    }
+
+    .price-features li {
+      padding: 6px 0;
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    .price-features li::before {
+      content: "✔";
+      color: #6366f1;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    /* Footer */
     footer {
       padding: 40px;
       text-align: center;
@@ -209,10 +350,26 @@
       font-size: 14px;
     }
 
+    footer a { color: #64748b; text-decoration: none; }
+    footer a:hover { color: #94a3b8; }
+
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .modules-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
     @media (max-width: 768px) {
       .hero h1 { font-size: 36px; }
       .features-grid { grid-template-columns: 1fr; }
-      .hero-buttons { flex-direction: column; }
+      .modules-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      header { padding: 12px 20px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .modules-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -222,98 +379,152 @@
   <div class="logo">Pulse<span>Deck</span></div>
   <nav class="nav-links">
     <a href="#features">Features</a>
+    <a href="#modules">Modules</a>
     <a href="#pricing">Pricing</a>
-    <a href="privacy-policy.html">Privacy & Data</a>
+    <a href="privacy-policy.html">Privacy</a>
     <a href="terms-of-use.html">Terms</a>
-    <a href="https://4620487871362.gumroad.com/l/PulseDeck" class="btn btn-primary" target="_blank">Buy Now</a>
+    <a href="https://g33koun3t.gumroad.com/l/PulseDeck" class="btn btn-primary" target="_blank">Buy Now</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="badge">Built for touch · Xeneon Edge, ROG Mjolnir, UPerfect & more</div>
-  <h1>Your PC.<br>Your home.<br>Your control.</h1>
+  <div class="badge">Works with Corsair Xeneon Edge &middot; ASUS ROG Mjolnir &middot; UPerfect &middot; any touchscreen</div>
+  <h1>Your PC. Your stream.<br>Your home. Your control.</h1>
   <p>
-    Turn your touchscreen into a real control center.<br>
-    Monitor your PC, launch apps and games, control audio, smart home
-    and manage your day — all from one screen.
+    Turn any secondary screen into a powerful all-in-one control center.<br>
+    PC monitoring, OBS Studio, Home Assistant, volume control, launcher and 13+ modules
+    &mdash; all from one dashboard.
   </p>
   <div class="hero-buttons">
-    <a href="https://4620487871362.gumroad.com/l/PulseDeck" class="btn btn-primary" target="_blank">Get Started</a>
-    <a href="#features" class="btn btn-secondary">Learn More</a>
+    <a href="https://g33koun3t.gumroad.com/l/PulseDeck" class="btn btn-primary" target="_blank">Get PulseDeck &mdash; 25&euro;</a>
+    <a href="#features" class="btn btn-secondary">Explore Features</a>
   </div>
 </section>
 
 <section class="screenshot-section">
   <div class="screenshot-wrapper">
-    <img src="monitoring.png" alt="PulseDeck Dashboard" style="width:100%; border-radius:8px;" />
+    <img src="monitoring.png" alt="PulseDeck Dashboard - PC monitoring, launcher, smart home and media controls" style="width:100%; border-radius:8px;" />
   </div>
   <p style="margin-top:16px; color:#94a3b8;">
-    Real-time monitoring, launcher, calendar, smart home and system controls —
-    optimized for ultra-wide touchscreens.
+    Real-time monitoring, Stream Deck launcher, OBS control, smart home, volume control and productivity tools &mdash;
+    optimized for touchscreens and ultra-wide displays.
   </p>
 </section>
 
 <section class="features" id="features">
-  <h2>Everything you need</h2>
+  <h2>Everything you need, one screen</h2>
   <p>
-    Everything you need to control your PC, your games, your smart home
-    and your daily workflow — from one touch screen.
+    13+ modules to control your PC, your streams, your smart home and your daily workflow.
   </p>
 
   <div class="features-grid">
     <div class="feature-card">
-      <h3>Advanced Monitoring</h3>
+      <span class="feature-icon">&#128200;</span>
+      <h3>Advanced PC Monitoring</h3>
       <p>
-        Real-time CPU per-core graphs, GPU, temperatures, disks and network,
-        with gaming-optimized performance mode.
+        Real-time CPU per-core graphs, GPU metrics, temperatures, disk activity and network stats.
+        Gaming mode auto-detects games and reduces system impact to zero.
       </p>
     </div>
 
     <div class="feature-card">
-      <h3>Stream Deck–Style Launcher</h3>
+      <span class="feature-icon">&#127909;</span>
+      <h3>OBS Studio Control <span class="feature-tag tag-new">NEW</span></h3>
       <p>
-        Launch apps, games, system actions or profiles with a single tap.
-        Fully customizable grid with export and import.
+        Start/stop stream and recording, switch scenes, mute microphone, manage audio sources
+        and see live status. Native WebSocket connection.
       </p>
     </div>
 
     <div class="feature-card">
-      <h3>Smart Home Control</h3>
+      <span class="feature-icon">&#127968;</span>
+      <h3>Home Assistant <span class="feature-tag tag-popular">POPULAR</span></h3>
       <p>
-        Native Home Assistant integration. Control lights, switches, sensors
-        and shutters with real-time feedback.
+        Full smart home control. Lights, switches, shutters/blinds with open/stop/close,
+        temperature and humidity sensors. Real-time status feedback. Also available directly in the launcher.
       </p>
     </div>
 
     <div class="feature-card">
-      <h3>Calendar & Productivity (coming soon)</h3>
+      <span class="feature-icon">&#128290;</span>
+      <h3>Stream Deck Launcher</h3>
       <p>
-        Google Calendar and ICS support, notes, timers, Pomodoro
-        and daily organization tools.
+        Customizable grid (7&times;5 default). Launch apps, games, system actions, profiles
+        and Home Assistant devices. Custom icons, export/import configs.
       </p>
     </div>
 
     <div class="feature-card">
-      <h3>Audio & Media Control</h3>
+      <span class="feature-icon">&#128266;</span>
+      <h3>Volume &amp; Audio Control</h3>
       <p>
-        System volume, output devices, media controls
-        and real-time audio visualizer.
+        System volume slider, mute toggle, audio output device selector,
+        media playback controls (prev/play/next) and real-time audio visualizer with 20 bars.
       </p>
     </div>
 
     <div class="feature-card">
-      <h3>Gaming Friendly</h3>
+      <span class="feature-icon">&#127760;</span>
+      <h3>Multi-Language &amp; Themes</h3>
       <p>
-        Automatic gaming detection, reduced polling,
-        disabled animations and low system impact.
+        9 languages built-in (FR, EN, DE, ES, PT, IT, NL, PL, JA).
+        Predefined themes + custom colors. Personalize every aspect of your dashboard.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">&#128197;</span>
+      <h3>Calendar &amp; Productivity</h3>
+      <p>
+        Google Calendar and ICS support. Pomodoro timer, countdown, stopwatch,
+        notes with categories, screenshot capture. Everything you need to stay organized.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">&#127918;</span>
+      <h3>Gaming Mode</h3>
+      <p>
+        Automatic game detection, reduced polling rates, disabled animations
+        and minimal resource consumption. Your dashboard never impacts your FPS.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">&#9971;</span>
+      <h3>Weather &amp; News</h3>
+      <p>
+        Current weather and multi-day forecast. RSS feed reader with categories
+        (gaming, tech, deals). Auto-refresh every 5 minutes.
       </p>
     </div>
   </div>
 </section>
 
+<section class="modules-section" id="modules">
+  <h2>13+ built-in modules</h2>
+  <p>Activate only what you need. Each module is independent and customizable.</p>
+
+  <div class="modules-grid">
+    <div class="module-pill"><span class="icon">&#128200;</span> PC Monitoring</div>
+    <div class="module-pill"><span class="icon">&#128200;</span> Monitoring+</div>
+    <div class="module-pill"><span class="icon">&#127909;</span> OBS Studio</div>
+    <div class="module-pill"><span class="icon">&#127968;</span> Home Assistant</div>
+    <div class="module-pill"><span class="icon">&#128290;</span> Launcher</div>
+    <div class="module-pill"><span class="icon">&#128266;</span> Volume Control</div>
+    <div class="module-pill"><span class="icon">&#9925;</span> Weather</div>
+    <div class="module-pill"><span class="icon">&#128197;</span> Calendar</div>
+    <div class="module-pill"><span class="icon">&#128295;</span> Tools (Pomodoro, Notes...)</div>
+    <div class="module-pill"><span class="icon">&#128240;</span> RSS News</div>
+    <div class="module-pill"><span class="icon">&#128203;</span> Clipboard History</div>
+    <div class="module-pill"><span class="icon">&#127760;</span> Custom Webviews (x5)</div>
+    <div class="module-pill"><span class="icon">&#9881;</span> Settings &amp; Themes</div>
+  </div>
+</section>
+
 <section class="designed-for">
-  <h2>Works with your touchscreen</h2>
-  <p>Auto-detects your secondary display and adapts to any resolution.</p>
+  <h2>Works with any secondary screen</h2>
+  <p>Auto-detects your display and adapts to any resolution. Touch or mouse &mdash; your choice.</p>
 
   <div class="specs">
     <div>
@@ -321,52 +532,60 @@
       <div class="spec-label">Display detection</div>
     </div>
     <div>
-      <div class="spec-value">Touch</div>
-      <div class="spec-label">Optimized UI</div>
+      <div class="spec-value">Touch + Mouse</div>
+      <div class="spec-label">Input support</div>
     </div>
     <div>
-      <div class="spec-value">Gaming</div>
-      <div class="spec-label">Low-impact monitoring</div>
+      <div class="spec-value">16:9 &middot; 21:9 &middot; 32:9</div>
+      <div class="spec-label">All aspect ratios</div>
     </div>
     <div>
       <div class="spec-value">9</div>
       <div class="spec-label">Languages</div>
     </div>
+    <div>
+      <div class="spec-value">0%</div>
+      <div class="spec-label">FPS impact (gaming mode)</div>
+    </div>
   </div>
 
   <div class="compatible-screens">
-    <p style="color:#64748b; margin-top:32px; font-size:14px;">Compatible with</p>
+    <p style="color:#64748b; margin-top:16px; font-size:14px;">Compatible with</p>
     <p style="color:#94a3b8; font-size:16px;">
-      Corsair Xeneon Edge &middot; ASUS ROG Mjolnir &middot; UPerfect &middot; Lesown &middot; Wisecoco &middot; and any USB/HDMI touchscreen
+      Corsair Xeneon Edge &middot; ASUS ROG Mjolnir &middot; UPerfect &middot; Lesown &middot; Wisecoco &middot; Windows tablets &middot; any USB/HDMI screen
     </p>
   </div>
 </section>
 
 <section class="pricing" id="pricing">
   <h2>Simple pricing</h2>
-  <p>One license. Full control. No subscription.</p>
+  <p>One license. Full control. No subscription. No cloud.</p>
 
   <div class="price-card">
-    <div class="price">30 €</div>
-    <div style="color:#64748b; margin-bottom:32px;">One-time payment · Lifetime license</div>
+    <div class="price">25 &euro;</div>
+    <div style="color:#64748b; margin-bottom:32px;">One-time payment &middot; Lifetime license</div>
 
-    <ul style="list-style:none; text-align:left; margin-bottom:32px;">
-      <li>✔ Complete PC monitoring & gaming mode</li>
-      <li>✔ Stream Deck–style launcher</li>
-      <li>✔ Home Assistant integration</li>
-      <li>✔ Calendar (coming soon), media & productivity tools</li>
-      <li>✔ Fully touch-optimized interface</li>
-      <li>✔ Offline capable · No cloud dependency</li>
+    <ul class="price-features">
+      <li>Complete PC monitoring with gaming mode</li>
+      <li>OBS Studio stream control</li>
+      <li>Home Assistant smart home integration</li>
+      <li>Stream Deck&ndash;style launcher</li>
+      <li>Volume control, audio visualizer &amp; media keys</li>
+      <li>Calendar, Pomodoro, notes &amp; productivity tools</li>
+      <li>Weather, RSS news &amp; clipboard history</li>
+      <li>9 languages &middot; Custom themes</li>
+      <li>Automatic updates &middot; Works offline</li>
     </ul>
 
-    <a href="https://4620487871362.gumroad.com/l/PulseDeck" class="btn btn-primary" style="width:100%;" target="_blank">Buy Now</a>
+    <a href="https://g33koun3t.gumroad.com/l/PulseDeck" class="btn btn-primary" style="width:100%;" target="_blank">Get PulseDeck</a>
   </div>
 </section>
 
 <footer>
-  © 2026 PulseDeck — PulseDeck for PC, Gaming & Smart Home
-  <br><a href="privacy-policy.html" style="color:#64748b; text-decoration:none;">Privacy Policy</a>
-  &middot; <a href="terms-of-use.html" style="color:#64748b; text-decoration:none;">Terms of Use</a>
+  &copy; 2026 PulseDeck &mdash; All-in-One Dashboard for PC, Gaming, Streaming &amp; Smart Home
+  <br>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  &middot; <a href="terms-of-use.html">Terms of Use</a>
 </footer>
 
 </body>
