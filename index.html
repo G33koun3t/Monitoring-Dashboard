@@ -10,7 +10,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="PulseDeck – All-in-One Dashboard for Your Secondary Screen" />
-  <meta property="og:description" content="Turn any touchscreen into a powerful control center. PC monitoring, OBS Studio, Home Assistant, launcher and 13+ modules. 25€ lifetime." />
+  <meta property="og:description" content="Turn any touchscreen into a powerful control center. PC monitoring, OBS Studio, Home Assistant, launcher and 16+ modules. 25€ lifetime." />
   <meta property="og:image" content="monitoring.png" />
   <meta property="og:type" content="website" />
 
@@ -381,6 +381,7 @@
     <a href="#features">Features</a>
     <a href="#modules">Modules</a>
     <a href="#pricing">Pricing</a>
+    <a href="docs.html">Docs</a>
     <a href="privacy-policy.html">Privacy</a>
     <a href="terms-of-use.html">Terms</a>
     <a href="https://g33koun3t.gumroad.com/l/PulseDeck" class="btn btn-primary" target="_blank">Buy Now</a>
@@ -392,7 +393,7 @@
   <h1>Your PC. Your stream.<br>Your home. Your control.</h1>
   <p>
     Turn any secondary screen into a powerful all-in-one control center.<br>
-    PC monitoring, OBS Studio, Home Assistant, volume control, launcher and 13+ modules
+    PC monitoring, OBS Studio, Home Assistant, volume control, launcher and 16+ modules
     &mdash; all from one dashboard.
   </p>
   <div class="hero-buttons">
@@ -414,7 +415,7 @@
 <section class="features" id="features">
   <h2>Everything you need, one screen</h2>
   <p>
-    13+ modules to control your PC, your streams, your smart home and your daily workflow.
+    16+ modules to control your PC, your streams, your smart home and your daily workflow.
   </p>
 
   <div class="features-grid">
@@ -499,6 +500,28 @@
     </div>
 
     <div class="feature-card">
+      <span class="feature-icon">&#128225;</span>
+      <h3>Docker Containers <span class="feature-tag tag-new">NEW</span></h3>
+      <p>
+        Monitor and control Docker containers on remote machines (NAS, servers, Raspberry Pi)
+        via SSH. Start/stop/restart containers, view logs, ports, volumes and live CPU/RAM stats.
+        Supports password and SSH key authentication.
+        <br><br>
+        <strong>Requires SSH access to a machine running Docker. <a href="docs.html#docker" style="color:#a5b4fc;">Setup guide</a>.</strong>
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">&#127908;</span>
+      <h3>Voice Commands <span class="feature-tag tag-new">NEW</span></h3>
+      <p>
+        Control PulseDeck by voice. Offline recognition via Vosk (no data sent to the cloud).
+        System commands (shutdown, lock), media controls (play, pause, next),
+        volume, Home Assistant devices, and OBS streaming. 9 languages supported.
+      </p>
+    </div>
+
+    <div class="feature-card">
       <span class="feature-icon">&#9971;</span>
       <h3>Weather &amp; News</h3>
       <p>
@@ -506,16 +529,46 @@
         (gaming, tech, deals). Auto-refresh every 5 minutes.
       </p>
     </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">&#127918;</span>
+      <h3>Game Intel <span class="feature-tag tag-new">NEW</span></h3>
+      <p>
+        In-game assistant for competitive gamers. Searchable database of items, secrets, codes,
+        tips and strategies for 13+ games. Auto-detects the running game and displays relevant intel.
+        Includes images, sources and multi-language support.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">&#127916;</span>
+      <h3>Clip Engine <span class="feature-tag tag-new">NEW</span></h3>
+      <p>
+        Record gameplay clips using your GPU&rsquo;s native recording tool.
+        Supports NVIDIA ShadowPlay, AMD ReLive and Xbox Game Bar.
+        One-click instant replay, toggle recording, and browse recent clips
+        &mdash; all from PulseDeck. No FFmpeg needed.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">&#128247;</span>
+      <h3>Photo Frame</h3>
+      <p>
+        Turn your secondary screen into a digital photo frame during idle time.
+        Select folders, set transition speed and display mode. Perfect for showing
+        personal photos when you&rsquo;re not gaming or working.
+      </p>
+    </div>
   </div>
 </section>
 
 <section class="modules-section" id="modules">
-  <h2>13+ built-in modules</h2>
+  <h2>16+ built-in modules</h2>
   <p>Activate only what you need. Each module is independent and customizable.</p>
 
   <div class="modules-grid">
     <div class="module-pill"><span class="icon">&#128200;</span> PC Monitoring</div>
-    <div class="module-pill"><span class="icon">&#128200;</span> Monitoring+</div>
     <div class="module-pill"><span class="icon">&#127909;</span> OBS Studio</div>
     <div class="module-pill"><span class="icon">&#127968;</span> Home Assistant</div>
     <div class="module-pill"><span class="icon">&#128290;</span> Launcher</div>
@@ -525,6 +578,11 @@
     <div class="module-pill"><span class="icon">&#128295;</span> Tools (Pomodoro, Notes...)</div>
     <div class="module-pill"><span class="icon">&#128240;</span> RSS News</div>
     <div class="module-pill"><span class="icon">&#128203;</span> Clipboard History</div>
+    <div class="module-pill"><span class="icon">&#128225;</span> Docker Containers</div>
+    <div class="module-pill"><span class="icon">&#127908;</span> Voice Commands</div>
+    <div class="module-pill"><span class="icon">&#127918;</span> Game Intel</div>
+    <div class="module-pill"><span class="icon">&#127916;</span> Clip Engine</div>
+    <div class="module-pill"><span class="icon">&#128247;</span> Photo Frame</div>
     <div class="module-pill"><span class="icon">&#127760;</span> Custom Webviews (x5)</div>
     <div class="module-pill"><span class="icon">&#9881;</span> Settings &amp; Themes</div>
   </div>
@@ -580,6 +638,11 @@
       <li>Stream Deck&ndash;style launcher</li>
       <li>DJ-style volume control, audio visualizer &amp; media transport</li>
       <li>Calendar, Pomodoro, notes &amp; productivity tools</li>
+      <li>Docker container monitoring via SSH</li>
+      <li>Voice commands (offline, Vosk)</li>
+      <li>Game Intel &mdash; in-game assistant for 13+ games</li>
+      <li>Clip Engine &mdash; record clips via ShadowPlay, ReLive or Game Bar</li>
+      <li>Photo Frame &mdash; digital photo slideshow</li>
       <li>Weather, RSS news &amp; clipboard history</li>
       <li>9 languages &middot; Custom themes</li>
       <li>Automatic updates &middot; Works offline</li>
